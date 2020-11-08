@@ -10,6 +10,8 @@ WEBMIN_SRC=${PWD}/webmin-1.960
 WEBMIN_UNINSTALL=${PWD}/uninstall-webmin.sh
 SETUP_PRE=${PWD}/setup-pre.sh
 INSTALL_DIR=/writable/webmin
+MOD_DIR=${PWD}/mod
+MODULES=( net.wbm mount.wbm proc.wbm )
 
 ${WEBMIN_UNINSTALL}
 
@@ -25,5 +27,16 @@ ${PWD}/setup.sh ${INSTALL_DIR}
 
 cd ${WEBMIN_SRC}/..
 
-# Clean src
 rm -rf ${WEBMIN_SRC}
+
+#echo "os_type=debian-linux" >> ${INSTALL_DIR}/etc/config
+#echo "os_version=9.0" >> ${INSTALL_DIR}/etc/config
+
+gunzip -f -k ${MOD_DIR}/*.gz
+
+for i in ${MODULES[@]}; do
+    perl ${INSTALL_DIR}/install-module.pl ${MOD_DIR}/${i} ${INSTALL_DIR}/etc
+done
+
+rm -f ${MOD_DIR}/*.wbm
+
