@@ -5,8 +5,8 @@ if [ $(id -u) -ne 0 ]; then
     exit 1
 fi
 
-WEBMIN_PACKAGE=${PWD}/webmin-1.960-minimal.tar.gz
-WEBMIN_SRC=${PWD}/webmin-1.960
+WEBMIN_PACKAGE=${PWD}/webmin-1.960-minimal-authentic.tar.gz
+WEBMIN_SRC=${PWD}/webmin-1.960-minimal-authentic
 WEBMIN_UNINSTALL=${PWD}/uninstall-webmin.sh
 SETUP_PRE=${PWD}/setup-pre.sh
 INSTALL_DIR=/writable/webmin
@@ -39,4 +39,10 @@ for i in ${MODULES[@]}; do
 done
 
 rm -f ${MOD_DIR}/*.wbm
+
+#echo "theme=authentic-theme" >> ${INSTALL_DIR}/etc/config
+#echo -n "authentic-theme" >> ${INSTALL_DIR}/etc/webmin.acl
+#echo "preroot=authentic-theme" >> ${INSTALL_DIR}/etc/miniserv.config
+
+
 
