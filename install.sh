@@ -29,9 +29,6 @@ cd ${WEBMIN_SRC}/..
 
 rm -rf ${WEBMIN_SRC}
 
-#echo "os_type=debian-linux" >> ${INSTALL_DIR}/etc/config
-#echo "os_version=9.0" >> ${INSTALL_DIR}/etc/config
-
 gunzip -f -k ${MOD_DIR}/*.gz
 
 for i in ${MODULES[@]}; do
@@ -39,10 +36,3 @@ for i in ${MODULES[@]}; do
 done
 
 rm -f ${MOD_DIR}/*.wbm
-
-#echo "theme=authentic-theme" >> ${INSTALL_DIR}/etc/config
-#echo -n "authentic-theme" >> ${INSTALL_DIR}/etc/webmin.acl
-#echo "preroot=authentic-theme" >> ${INSTALL_DIR}/etc/miniserv.config
-
-
-
