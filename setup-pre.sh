@@ -1,5 +1,5 @@
-config_dir=/writable/webmin/etc
-var_dir=/writable/webmin/log
+config_dir=/writable/user-data/webmin/etc
+var_dir=/writable/user-data/webmin/log
 perl=/usr/bin/perl
 port=10000
 login="admin"
