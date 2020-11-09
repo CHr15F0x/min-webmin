@@ -1,0 +1,94 @@
+Bootup and Shutdown Actions 1.960
+Description	Setup scripts to be run at boot time from /etc/init.d or /etc/rc.local.
+Download	init.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated	2020-10-19 01:13:31
+
+Certificate Manager 1.7
+Description	Create and manage OpenSSL certificates on your system. This module was originally developed by Caldera. Now supports CSR signing, PKCS12 conversion and access control.
+Download	certmgr.wbm.gz
+Author	Jamie Cameron
+Last updated	2010-01-20 18:22:33
+
+Change Passwords 1.960
+Description	Change the passwords of Unix users.
+Download	passwd.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated	2020-10-19 01:13:31
+
+Command Shell 1.960
+Description	Execute shell commands and view their output.
+Download	shell.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated	2020-10-19 01:13:31
+
+Custom Commands 1.960
+Description	Create buttons to execute commonly used commands on your system.
+Download	custom.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated	2020-10-19 01:13:31
+
+File Manager 1.960
+Description	View, edit and change permissions on files and directories on your system with a Windows-like file manager.
+Download	file.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated
+
+Heartbeat Monitor 1.960
+Description	Configure the Heartbeat package for automatic server failover in a cluster.
+Download	heartbeat.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated	2020-10-19 01:13:31
+
+Linux Firewall 1.960
+Description	Configure a Linux firewall using iptables. Allows the editing of all tables, chains, rules and options.
+Download	firewall.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated
+
+Log File Rotation 1.960
+Description	Set up the automatic rotation of Apache, Squid, Syslog and other log files.
+Download	logrotate.wbm.gz
+Website	http://www.webmin.com/webmin/standard.html
+Author	Jamie Cameron
+Last updated	2020-10-19 01:13:31
+
+logviewer 1.530
+Description	The purpose of this module is to provide a web interface to easily read plain text files (logs) in a centralized and safe way.
+Download	logviewer.wbm.gz
+Website	http://www.webmin.com/
+Author	Oscar Manuel Gómez Senovilla
+Last updated	20
+
+Network Utilities 1.060.1
+Description	Utilizes the standard networking tools (ping, traceroute and nslookup) with most options and makes them available from Webmin.
+Website	http://www.niemueller.de/webmin/modules/nettools/
+Author	Tim Niemueller
+Last updated
+
+Nginx 0.10
+Description	Plugin for Virtualmin/Webmin. Enable add/remove, disable sites to Nginx config
+Download	https://www.justindhoffman.com/sites/justindhoffman.com/files/nginx-0.10.wbm_.gz
+Website	http://www.justindhoffman.com/project/nginx-webmin-module
+Author	Justin Hoffman
+Last updated
+
+OpenVPN-admin 3.2
+Description	Webmin OpenVpn Admin Module allows you to create static or CA-based VPNs through a Web interface
+Download	openvpn-3.2.wbm.gz
+Website	http://www.openit.it/index.php/it/openvpnadmin
+Author	Giuliano Natali & Marco Colombo
+Last updated	2
+
+Text Editor 1.4
+Description	Provides a simple interface for editing text files, with a history of recently-edited files.
+Download	text-editor.wbm.gz
+Author	Jamie Cameron
+Last updated
