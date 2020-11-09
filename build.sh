@@ -3,8 +3,12 @@
 WEBMIN="min-webmin"
 
 mkdir -p ${WEBMIN}
-cp -R ${PWD}/* ${WEBMIN}
-rm -f ${WEBMIN}/${0}
+cp -R ${PWD}/install.sh ${WEBMIN}
+cp -R ${PWD}/mod ${WEBMIN}
+cp -R ${PWD}/setup-pre.sh ${WEBMIN}
+cp -R ${PWD}/uninstall.sh ${WEBMIN}
+cp -R ${PWD}/webmin-1.960-minimal-authentic.tar.gz ${WEBMIN}
+
 tar czf ${WEBMIN}.tar.gz ${WEBMIN}
 
 rm -rf ${WEBMIN}

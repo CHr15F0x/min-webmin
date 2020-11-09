@@ -9,5 +9,5 @@ INSTALL_DIR=/writable/webmin
 
 # Clean prev install
 ${INSTALL_DIR}/etc/stop
-(cd ${INSTALL_DIR} ; WEBMIN_CONFIG=${INSTALL_DIR}/etc WEBMIN_VAR=${INSTALL_DIR}/log LANG= "${INSTALL_DIR}/run-uninstalls.pl")
+(cd ${INSTALL_DIR}/src ; WEBMIN_CONFIG=${INSTALL_DIR}/etc WEBMIN_VAR=${INSTALL_DIR}/log LANG= "${INSTALL_DIR}/src/run-uninstalls.pl")
 rm -rf ${INSTALL_DIR}
