@@ -5,6 +5,7 @@ if [ $(id -u) -ne 0 ]; then
     exit 1
 fi
 
+PERL=perl-5.32.0-bin
 WEBMIN_PACKAGE=${PWD}/webmin-1.960-minimal-authentic.tar.gz
 WEBMIN_SRC=${PWD}/webmin-1.960-minimal-authentic
 WEBMIN_UNINSTALL=${PWD}/uninstall.sh
@@ -15,6 +16,12 @@ MODULES=( net.wbm mount.wbm proc.wbm )
 DEST_DIR=/writable/user-data/webmin
 CONFIG_DIR=${DEST_DIR}/etc
 INSTALL_DIR=${DEST_DIR}/src
+
+tar -xvf ${PWD}/${PERL}.tar.gz
+
+cp -R ${PWD}/${PERL} ${DEST_DIR}
+
+rm -rf ${PWD}/${PERL}
 
 ${WEBMIN_UNINSTALL}
 
