@@ -3,6 +3,7 @@
 WEBMIN="min-webmin"
 
 mkdir -p ${WEBMIN}
+cp -R ${PWD}/perl-5.32.0-bin.tar.gz ${WEBMIN}
 cp -R ${PWD}/install.sh ${WEBMIN}
 cp -R ${PWD}/mod ${WEBMIN}
 cp -R ${PWD}/setup-pre.sh ${WEBMIN}
