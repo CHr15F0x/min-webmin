@@ -13,7 +13,7 @@ SETUP_PRE=${PWD}/setup-pre.sh
 MOD_DIR=${PWD}/mod
 MODULES=( net.wbm mount.wbm proc.wbm )
 
-DEST_DIR=/writable/user-data/webmin
+DEST_DIR=/writable/user-data/protogw-all/webmin
 CONFIG_DIR=${DEST_DIR}/etc
 INSTALL_DIR=${DEST_DIR}/src
 

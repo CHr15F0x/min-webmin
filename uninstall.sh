@@ -5,7 +5,7 @@ if [ $(id -u) -ne 0 ]; then
     exit 1
 fi
 
-INSTALL_DIR=/writable/user-data/webmin
+INSTALL_DIR=/writable/user-data/protogw-all/webmin
 
 # Clean prev install
 ${INSTALL_DIR}/etc/stop
