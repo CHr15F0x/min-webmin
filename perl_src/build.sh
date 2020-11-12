@@ -4,11 +4,12 @@ set -e
 
 PERL_SRC="perl-5.32.0"
 PERL_INSTALL_DIR="/writable/user-data/protogw-all/perl"
-MORE_MODULES= ( "Socket" "Net::SSLeay" )
+MORE_MODULES=( "Socket" "Net::SSLeay" )
 
+rm -rf ${PERL_INSTALL_DIR}
 mkdir -p ${PERL_INSTALL_DIR}
 
-tar czf ${PERL_SRC}.tar.gz
+tar xzf ${PERL_SRC}.tar.gz
 
 cd ${PERL_SRC}
 
