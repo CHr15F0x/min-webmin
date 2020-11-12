@@ -19,7 +19,8 @@ INSTALL_DIR=${WEBMIN_DIR}/src
 
 mkdir -p ${WEBMIN_DIR}
 
-tar -C ${BASE_DIR} -xzf ${PWD}/perl.tar.gz
+tar xzf ${PWD}/perl.tar.gz
+mv perl ${BASE_DIR}
 
 export PERL5LIB=${BASE_DIR}/perl/lib
 export PERLLIB=${PERL5LIB}
@@ -28,7 +29,7 @@ ${WEBMIN_UNINSTALL}
 
 rm -rf ${WEBMIN_SRC}
 
-tar -xzf ${WEBMIN_PACKAGE}
+tar xzf ${WEBMIN_PACKAGE}
 
 cp ${SETUP_PRE} ${WEBMIN_SRC}
 

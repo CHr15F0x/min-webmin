@@ -26,8 +26,8 @@ done
 
 rm -rf ${PERL_INSTALL_DIR}/man
 
-tar czf ${PERL_INSTALL_DIR}.tar.gz ${PERL_INSTALL_DIR}
+mv ${PERL_INSTALL_DIR} ${PWD}
 
-mv ${PERL_INSTALL_DIR}.tar.gz ${PWD}
+tar czf perl.tar.gz perl
 
 echo "Done!"
