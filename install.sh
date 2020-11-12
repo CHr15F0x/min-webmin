@@ -5,7 +5,6 @@ if [ $(id -u) -ne 0 ]; then
     exit 1
 fi
 
-PERL=perl-5.32.0-bin
 WEBMIN_PACKAGE=${PWD}/webmin-1.960-minimal-authentic.tar.gz
 WEBMIN_SRC=${PWD}/webmin-1.960-minimal-authentic
 WEBMIN_UNINSTALL=${PWD}/uninstall.sh
@@ -13,15 +12,17 @@ SETUP_PRE=${PWD}/setup-pre.sh
 MOD_DIR=${PWD}/mod
 MODULES=( net.wbm mount.wbm proc.wbm )
 
-DEST_DIR=/writable/user-data/protogw-all/webmin
-CONFIG_DIR=${DEST_DIR}/etc
-INSTALL_DIR=${DEST_DIR}/src
+BASE_DIR=/writable/user-data/protogw-all
+WEBMIN_DIR=${BASE_DIR}/webmin
+CONFIG_DIR=${WEBMIN_DIR}/etc
+INSTALL_DIR=${WEBMIN_DIR}/src
 
-tar -xvf ${PWD}/${PERL}.tar.gz
+mkdir -p ${WEBMIN_DIR}
 
-cp -R ${PWD}/${PERL} ${DEST_DIR}
+tar -C ${BASE_DIR} -xzf ${PWD}/perl.tar.gz
 
-rm -rf ${PWD}/${PERL}
+export PERL5LIB=${BASE_DIR}/perl/lib
+export PERLLIB=${PERL5LIB}
 
 ${WEBMIN_UNINSTALL}
 
@@ -44,9 +45,9 @@ rm -rf ${WEBMIN_SRC}
 gunzip -f -k ${MOD_DIR}/*.gz
 
 for i in ${MODULES[@]}; do
-    perl ${INSTALL_DIR}/install-module.pl ${MOD_DIR}/${i} ${CONFIG_DIR}
+    ${BASE_DIR}/perl/bin/perl ${INSTALL_DIR}/install-module.pl ${MOD_DIR}/${i} ${CONFIG_DIR}
 done
 
 rm -f ${MOD_DIR}/*.wbm
 
-cp ${WEBMIN_UNINSTALL} ${DEST_DIR}
+cp ${WEBMIN_UNINSTALL} ${WEBMIN_DIR}
