@@ -21,7 +21,7 @@ make install
 cd ..
 
 for i in ${MORE_MODULES[@]}; do
-    ${PERL_INSTALL_DIR}/bin/perl -MCPAN -e 'install ${i}'
+    ${PERL_INSTALL_DIR}/bin/perl -MCPAN -e "install ${i}"
 done
 
 rm -rf ${PERL_INSTALL_DIR}/man

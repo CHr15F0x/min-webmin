@@ -13,3 +13,6 @@ cp -R ${PWD}/webmin-1.960-minimal-authentic.tar.gz ${WEBMIN}
 tar czf ${WEBMIN}.tar.gz ${WEBMIN}
 
 rm -rf ${WEBMIN}
+
+echo "Done!"
+
