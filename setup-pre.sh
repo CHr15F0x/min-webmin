@@ -7,3 +7,4 @@ login="admin"
 password="admin"
 ssl=1
 atboot=1
+ostart=1
