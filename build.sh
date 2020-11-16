@@ -9,6 +9,7 @@ cp -R ${PWD}/mod ${WEBMIN}
 cp -R ${PWD}/setup-pre.sh ${WEBMIN}
 cp -R ${PWD}/uninstall.sh ${WEBMIN}
 cp -R ${PWD}/webmin-1.960-minimal-authentic.tar.gz ${WEBMIN}
+cp -R ${PWD}/webmin.service ${WEBMIN}
 
 tar czf ${WEBMIN}.tar.gz ${WEBMIN}
 

@@ -17,6 +17,14 @@ WEBMIN_DIR=${BASE_DIR}/webmin
 CONFIG_DIR=${WEBMIN_DIR}/etc
 INSTALL_DIR=${WEBMIN_DIR}/src
 
+if grep -q -P "model name\s+:\s+Intel\(R\) Core\(TM\) i7-7500U" /proc/cpuinfo; then
+    SYSTEMD_DIR=/etc/systemd/system
+else
+    SYSTEMD_DIR=/writable/system-data/etc/systemd/system
+fi
+
+echo "Installing webmin..."
+
 mkdir -p ${WEBMIN_DIR}
 
 tar xzf ${PWD}/perl.tar.gz
@@ -52,3 +60,15 @@ done
 rm -f ${MOD_DIR}/*.wbm
 
 cp ${WEBMIN_UNINSTALL} ${WEBMIN_DIR}
+
+cp ${PWD}/webmin.service ${SYSTEMD_DIR}
+systemctl daemon-reload
+systemctl enable webmin.service
+systemctl start webmin.service
+
+echo "
++----------------------------------------------+
+| Finished installing webmin.                  |
++----------------------------------------------+
+"
+systemctl status --no-pager webmin.service
