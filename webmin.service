@@ -1,0 +1,17 @@
+[Unit]
+Description=Webmin
+Wants=local-fs.target network.target
+After=local-fs.target network.target
+
+[Service]
+Type=forking
+PIDFile=/writable/user-data/protogw-all/webmin/log/miniserv.pid
+WorkingDirectory=/writable/user-data/protogw-all/webmin/log
+ExecStart=/writable/user-data/protogw-all/webmin/etc/start
+ExecStop=/writable/user-data/protogw-all/webmin/etc/stop
+Restart=always
+TimeoutStartSec=10s
+TimeoutStopSec=10s
+
+[Install]
+WantedBy=multi-user.target
