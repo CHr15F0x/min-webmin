@@ -10,7 +10,6 @@ WEBMIN_SRC=${PWD}/webmin-1.960-minimal-authentic
 WEBMIN_UNINSTALL=${PWD}/uninstall.sh
 SETUP_PRE=${PWD}/setup-pre.sh
 MOD_DIR=${PWD}/mod
-MODULES=( net.wbm mount.wbm proc.wbm )
 
 BASE_DIR=/writable/user-data/protogw-all
 WEBMIN_DIR=${BASE_DIR}/webmin
@@ -53,8 +52,9 @@ rm -rf ${WEBMIN_SRC}
 
 gunzip -f -k ${MOD_DIR}/*.gz
 
-for i in ${MODULES[@]}; do
-    ${BASE_DIR}/perl/bin/perl ${INSTALL_DIR}/install-module.pl ${MOD_DIR}/${i} ${CONFIG_DIR}
+MODULES=`ls -1 ${MOD_DIR}/*.wbm`
+for i in ${MODULES}; do
+    ${BASE_DIR}/perl/bin/perl ${INSTALL_DIR}/install-module.pl ${i} ${CONFIG_DIR}
 done
 
 rm -f ${MOD_DIR}/*.wbm
