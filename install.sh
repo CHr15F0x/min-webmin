@@ -16,7 +16,7 @@ WEBMIN_DIR=${BASE_DIR}/webmin
 CONFIG_DIR=${WEBMIN_DIR}/etc
 INSTALL_DIR=${WEBMIN_DIR}/src
 
-if grep -q -P "model name\s+:\s+Intel\(R\) Core\(TM\) i7-7500U" /proc/cpuinfo; then
+if grep -q -P "model name\s+:\s+Intel\(R\) Core" /proc/cpuinfo || grep -q -P "model name\s+:\s+AMD Ryzen" /proc/cpuinfo; then
     SYSTEMD_DIR=/etc/systemd/system
 else
     SYSTEMD_DIR=/writable/system-data/etc/systemd/system
